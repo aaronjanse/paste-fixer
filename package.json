@@ -4,7 +4,10 @@
   "description": "Remove line numbers from pasted code.",
   "version": "1.0.0",
   "publisher": "aaronduino",
-  "repository": "aaronduino/paste-fixer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aaronduino/paste-fixer.git"
+  },
   "author": {
     "name": "Aaron Janse",
     "email": "gitduino@gmail.com",
