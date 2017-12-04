@@ -1,0 +1,62 @@
+{
+  "name": "paste-fixer",
+  "displayName": "PasteFixer",
+  "description": "Remove line numbers from pasted code.",
+  "version": "1.0.0",
+  "publisher": "aaronduino",
+  "repository": "aaronduino/paste-fixer",
+  "author": {
+    "name": "Aaron Janse",
+    "email": "gitduino@gmail.com",
+    "url": "http://ajanse.me"
+  },
+  "license": "AGPLv3",
+  "bugs": {
+    "url": "https://github.com/aaronduino/paste-fixer/issues",
+    "email": "gitduino@gmail.com"
+  },
+  "engines": {
+    "vscode": "^1.18.0"
+  },
+  "categories": ["Formatters"],
+  "activationEvents": [
+    "onCommand:extension.removeLineNumbers",
+    "onCommand:extension.pasteFixed"
+  ],
+  "main": "./extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.removeLineNumbers",
+        "title": "Remove Line Numbers"
+      },
+      {
+        "command": "extension.pasteFixed",
+        "title": "Paste Without Line Numbers"
+      }
+    ],
+    "keybindings": [
+      {
+        "win": "ctrl+shift+v",
+        "linux": "ctrl+shift+v",
+        "mac": "cmd+shift+v",
+        "key": "ctrl+shift+v",
+        "command": "extension.pasteFixed"
+      }
+    ]
+  },
+  "scripts": {
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "typescript": "^2.6.1",
+    "vscode": "^1.1.6",
+    "eslint": "^4.6.1",
+    "@types/node": "^7.0.43",
+    "@types/mocha": "^2.2.42"
+  },
+  "dependencies": {
+    "copy-paste": "^1.3.0"
+  }
+}
