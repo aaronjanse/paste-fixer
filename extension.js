@@ -35,6 +35,13 @@ function fix_text(text, fix_indenting = true) {
   return text;
 }
 
+// optionaly fix "." and ":" after line number (not tested!)
+function fix_text_regex(text){
+  let re = new RegExp("^\\s*\\d+\\:?\\.?", "gm");
+  text = text.replace(re, "");
+  return text;
+}
+
 function activate(context) {
   let removeLineNumbers = vscode.commands.registerCommand(
     "extension.removeLineNumbers",
